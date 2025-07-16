@@ -11,7 +11,14 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, 'index.html'))
 })
 
+app.get("/call", (req, res) => {
+    res.redirect("tel://+905334395754");
+})
+
+app.get("/wp", (req, res) => {
+    res.redirect("https://wa.me/905334395754?text=Merhaba, Google reklamınız üzerinden ulaşıyorum.");
+})
+
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`)
 })
-
