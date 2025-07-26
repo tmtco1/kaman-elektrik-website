@@ -1,60 +1,77 @@
-        const words = ["Uygun Fiyat", "Profesyonel Ekip", "Hızlı Çözüm"];
-        const textElement = document.getElementById("interactive-text");
-        let currentIndex = 0;
+let currentSlide = 0;
+const slides = document.getElementById("slides");
+const totalSlides = slides.children.length;
+const heroSection = document.querySelector('.hero');
+const isMobile = window.innerWidth <= 768;
 
-        function changeText() {
-            textElement.classList.remove("animate__fadeIn", "animate__fadeOut");
-            textElement.classList.add("animate__animated", "animate__fadeOut");
-            
-            setTimeout(() => {
-                currentIndex = (currentIndex + 1) % words.length;
-                textElement.textContent = words[currentIndex];
-                textElement.classList.remove("animate__fadeOut");
-                textElement.classList.add("animate__fadeIn");
-                
-                setTimeout(() => {
-                    textElement.classList.remove("animate__fadeIn");
-                }, 1000);
-            }, 1000);
-        }
+function showSlide(index) {
+  if (index < 0) index = totalSlides - 1;
+  if (index >= totalSlides) index = 0;
+  currentSlide = index;
+  slides.style.transform = `translateX(-${index * 100}%)`;
+}
 
-        // Duplicate review cards for seamless loop
-        const reviewsSlider = document.getElementById('reviewsSlider');
-        const reviewCards = reviewsSlider.innerHTML;
-        reviewsSlider.innerHTML = reviewCards + reviewCards;
+function nextSlide() { showSlide(currentSlide + 1); }
+function prevSlide() { showSlide(currentSlide - 1); }
 
-        // Change text every 2.5 seconds
-        setInterval(changeText, 2500);
+// Otomatik slider
+let autoSlider = setInterval(() => nextSlide(), 5000);
 
-        // Smooth scrolling for potential anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+// Sadece mobilde touch events
+if (isMobile) {
+  let touchStartX = 0;
+  let touchEndX = 0;
 
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+  heroSection.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    clearInterval(autoSlider);
+  });
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+  heroSection.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+    autoSlider = setInterval(() => nextSlide(), 5000);
+  });
 
-        // Observe service cards and about cards
-        document.querySelectorAll('.service-card, .about-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    
+    if (touchEndX < touchStartX - swipeThreshold) {
+      nextSlide();
+    }
+    
+    if (touchEndX > touchStartX + swipeThreshold) {
+      prevSlide();
+    }
+  }
+}
+
+// Geri kalan kodların aynı kalacak...
+function toggleMobileNav() {
+  document.getElementById("mobileNav").classList.toggle("show");
+}
+
+let mybutton = document.getElementById("gototop");
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-10px) scale(1.02)';
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0) scale(1)';
+  });
+});

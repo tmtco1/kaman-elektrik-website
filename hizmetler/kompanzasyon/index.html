@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bodrum Kompanzasyon Panosu</title>
+  <link rel="stylesheet" href="/hizmetler/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo" onclick="window.location.href='/';" style="cursor: pointer;">
+      <div class="logo-text">
+        <img src="/img/logo.png" alt="Logo" class="kamanelkpng">
+        <h1>Kaman Elektrik</h1>
+      </div>
+    </div>
+    <a href="/" class="back-button">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>Geri Dön</span>
+    </a>
+  </header>
+
+
+  <!-- Call Button -->
+  <button onclick="location.href='tel:+905334395754'" id="gototop">
+    <i class="fa-solid fa-phone-volume"></i> Bizi arayın!
+  </button> 
+
+  <!-- Content -->
+  <div class="content">
+    <div class="main-container">
+      <div class="article-container">
+        <div class="article-meta">
+          Yayın Tarihi • 25 Temmuz 2025
+        </div>
+        <h1>Bodrum Kompanzasyon Panosu Kurulumu ve Bakımı</h1>
+        <p>
+          Kompanzasyon panosu, işletmelerde <b>reaktif/kapasitif/kapasitif</b> güç dengesini sağlayarak hem enerji verimliliğini artıran hem de ceza ödemelerini önleyen bir sistemdir. 
+          Bodrum'da otel, pansiyon, ticarethane gibi büyük elektrik yükü olan yerlerde kompanzasyon sistemi kullanımı büyük önem taşır.
+        </p>
+
+        <h2>Kompanzasyon Panosu Nedir?</h2>
+        <p>
+          Kompanzasyon panosu, şebekeden çekilen reaktif/kapasitif gücü dengeleyerek endüktif veya kapasitif yüklerin neden olduğu güç kayıplarını engelleyen bir sistemdir. 
+          Bu sayede elektrik faturalarında "reaktif/kapasitif ceza" oluşmaz ve sistem verimli şekilde çalışır.
+        </p>
+
+        <h2>Bodrum'da Kompanzasyon Sistemlerinin Önemi</h2>
+        <p>
+          Bodrum'da çok sayıda otel, site, iş merkezi ve atölye gibi büyük enerji tüketen yapılar bulunur. 
+          Bu yapılarda kompanzasyon panosu olmaması veya arızalı olması, ciddi reaktif/kapasitif enerji cezalarına neden olabilir. 
+          Aynı zamanda sistemin sağlıklı çalışmaması cihazlara zarar verebilir ve şebeke kalitesini düşürür.
+        </p>
+
+        <h2>Kompanzasyon Arızası Nasıl Anlaşılır?</h2>
+        <p>
+          Kompanzasyon sisteminizde şu belirtiler varsa arıza olabilir:
+        </p>
+        <ul>
+          <li>Reaktif güç kontrol rolesi düzgün çalışmıyor veya arızalandıysa</li>
+          <li>Elektrik faturasına reaktif/kapasitif ceza yansıyorsa,</li>
+          <li>Pano fanları çalışmıyorsa ya da kondansatörlerde şişme varsa,</li>
+          <li>Kontaktörler sesli çalışıyorsa,</li>
+          <li>Otomatik kademe geçişleri düzgün yapılmıyorsa.</li>
+        </ul>
+        <p>
+          Bu durumlarda kompanzasyon sistemine müdahale etmeyin, <strong>uzman bir elektrikçiden destek alın</strong>.
+        </p>
+        <p>
+          <strong>Bodrum elektrikçi</strong> olarak kompanzasyon panosu kurulumu, bakımı ve arıza onarımı konularında tam hizmet sunuyoruz.
+        </p>
+
+        <h2>Bodrum Kompanzasyon Panosu Hizmetlerimiz</h2>
+        <ul>
+          <li>Yeni kompanzasyon panosu kurulumu (manuel veya otomatik)</li>
+          <li>Eski panoların yenilenmesi</li>
+          <li>Kompanzasyon takibi ve ceza önleyici sistem kontrolleri</li>
+          <li>Periyodik bakım ve kondansatör değişimi</li>
+        </ul>
+
+        <p>
+          <strong>Elektrik faturanıza reaktif/kapasitif ceza yansımaması için kompanzasyon sisteminizi düzenli kontrol ettirin.</strong> 
+          Bodrum'da profesyonel destek için bizimle iletişime geçin.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="">
+    </div>
+  </div>
+
+  <script>
+    function openModal(element) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const img = element.querySelector('img');
+      
+      modal.classList.add('show');
+      modalImg.src = img.src.replace('w=400', 'w=1200');
+      modalImg.alt = img.alt;
+      
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.remove('show');
+      
+      document.body.style.overflow = 'auto';
+    }
+    
+    document.getElementById('imageModal').onclick = function(event) {
+      if (event.target === this) {
+        closeModal();
+      }
+    }
+    
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>

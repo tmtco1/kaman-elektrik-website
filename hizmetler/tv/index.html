@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+   <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Makale Şablonu</title>
+  <link rel="stylesheet" href="/hizmetler/style.css">
+
+   </head>
+   <body>
+  <header>
+    <div class="logo" onclick="window.location.href='/';" style="cursor: pointer;">
+      <div class="logo-text">
+        <img src="/img/logo.png" alt="Logo" class="kamanelkpng">
+        <h1>Kaman Elektrik</h1>
+      </div>
+    </div>
+    <a href="/" class="back-button">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>Geri Dön</span>
+    </a>
+  </header>
+      <button onclick="location.href='tel:+905334395754'" id="gototop"><i class="fa-solid fa-phone-volume"></i> Bizi arayın!</button> 
+      <div class="content">
+         <div class="main-container">
+            <div class="article-container">
+               <div class="article-meta">
+                  Yayın Tarihi • 25 Temmuz 2025
+               </div>
+  <h1>TV Uydu Kurulumu ve LNB Arızalarının Onarımı</h1>
+  <p>
+    Televizyon yayınlarını kesintisiz ve kaliteli izleyebilmek için uydu sistemi kurulumu büyük önem taşır. 
+    <strong>Kaman Elektrik</strong> olarak <strong>Bodrum elektrikçi</strong> hizmetlerimiz kapsamında uydu anteni kurulumu, LNB bağlantısı ve uydu alıcı ayarlamaları gibi işlemleri titizlikle gerçekleştiriyoruz.
+  </p>
+
+  <h2>TV Uydu Kurulumu Nedir?</h2>
+  <p>
+    Uydu kurulumu, çanak antenin doğru açıyla yerleştirilmesi, LNB (Low Noise Block) ünitesinin takılması ve televizyon ile uydu alıcısı arasındaki bağlantıların yapılması süreçlerini kapsar. 
+    Bu işlemlerin doğru yapılması, yayınların donmadan, net bir şekilde alınabilmesi için şarttır.
+  </p>
+
+  <h2>Kaman Elektrik Olarak Sağladığımız Hizmetler</h2>
+  <ul>
+    <li>Çanak anten kurulumu ve yön ayarı</li>
+    <li>LNB montajı ve kablo bağlantıları</li>
+    <li>Uydu alıcısı bağlantı ve kanal tarama ayarları</li>
+    <li>Mevcut sistemde sinyal zayıflığı veya kanal sorunu çözümü</li>
+    <li>Frekans ayarları ve yazılım güncellemeleri</li>
+  </ul>
+
+  <h2>LNB Nedir, Neden Arızalanır?</h2>
+  <p>
+    LNB, çanak antenin odak noktasına yerleştirilen ve uydu sinyallerini alıp kablo aracılığıyla alıcıya ileten parçadır. 
+    Dış ortamda yer aldığı için yağmur, rüzgar, güneş gibi hava şartlarına maruz kalır ve zamanla arızalanabilir. 
+    Arızalı LNB’ler genellikle sinyal kesilmesine, bazı kanalların kaybolmasına veya hiç yayın alınamamasına sebep olur.
+  </p>
+
+  <h2>Sık Karşılaşılan Uydu Sorunları</h2>
+  <ul>
+    <li>“Sinyal yok” veya “uydu sinyali zayıf” uyarısı</li>
+    <li>Kanal listesi kaybı</li>
+    <li>Görüntü donması veya kesik yayın</li>
+    <li>LNB arızası nedeniyle bazı frekansların alınamaması</li>
+    <li>Kablo kırılması, su alması veya bağlantı gevşemesi</li>
+  </ul>
+
+  <h2>Bodrum’da Uydu Kurulumu ve LNB Onarımı İçin Doğru Adres</h2>
+  <p>
+    Uydu kurulumu veya sinyal problemleri yaşıyorsanız, <strong>Kaman Elektrik</strong> olarak Bodrum’daki tüm mahallelere hızlı servis sağlıyoruz. 
+    Profesyonel ekipmanlarımız ve deneyimli teknik ekibimiz ile çanak anten kurulumu, LNB değişimi ve kablo düzenlemelerini kısa sürede tamamlıyoruz.
+  </p>
+
+  <p>
+    <strong>Bodrum elektrikçi</strong> olarak, sadece televizyonunuzu değil, yayının kalitesini de garanti altına alıyoruz.
+  </p>
+
+  <h2>Bizimle İletişime Geçin</h2>
+  <p>
+    Yeni TV uydu sistemi kurulumu, eski sistemin onarımı veya sinyal problemleri için hemen bizimle iletişime geçin.
+    Kaman Elektrik olarak kaliteli yayınlar için kaliteli hizmet sunmaya hazırız.
+  </p>
+            </div>
+         </div>
+      </div>
+      <!-- Modal -->
+      <div id="imageModal" class="modal">
+         <span class="close" onclick="closeModal()">&times;</span>
+         <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+         </div>
+      </div>
+      <script>
+         function openModal(element) {
+             const modal = document.getElementById('imageModal');
+             const modalImg = document.getElementById('modalImage');
+             const img = element.querySelector('img');
+             
+             modal.classList.add('show');
+             modalImg.src = img.src.replace('w=400', 'w=1200'); // Daha yüksek çözünürlük
+             modalImg.alt = img.alt;
+             
+             // Body scroll'unu engelle
+             document.body.style.overflow = 'hidden';
+         }
+         
+         function closeModal() {
+             const modal = document.getElementById('imageModal');
+             modal.classList.remove('show');
+             
+             // Body scroll'unu geri aç
+             document.body.style.overflow = 'auto';
+         }
+         
+         // Modal dışına tıklandığında kapat
+         document.getElementById('imageModal').onclick = function(event) {
+             if (event.target === this) {
+                 closeModal();
+             }
+         }
+         
+         // ESC tuşu ile kapat
+         document.addEventListener('keydown', function(event) {
+             if (event.key === 'Escape') {
+                 closeModal();
+             }
+         });
+      </script>
+   </body>
+</html>

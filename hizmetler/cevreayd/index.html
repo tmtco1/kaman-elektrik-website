@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+   <head>
+  <link rel="stylesheet" href="/hizmetler/style.css">
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Makale Şablonu</title>
+   </head>
+   <body>
+  <header>
+    <div class="logo" onclick="window.location.href='/';" style="cursor: pointer;">
+      <div class="logo-text">
+        <img src="/img/logo.png" alt="Logo" class="kamanelkpng">
+        <h1>Kaman Elektrik</h1>
+      </div>
+    </div>
+    <a href="/" class="back-button">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>Geri Dön</span>
+    </a>
+  </header>
+      <button onclick="location.href='tel:+905334395754'" id="gototop"><i class="fa-solid fa-phone-volume"></i> Bizi arayın!</button> 
+      <div class="content">
+         <div class="main-container">
+            <div class="article-container">
+               <div class="article-meta">
+                  Yayın Tarihi • 25 Temmuz 2025
+               </div>
+                 <h1>Bodrum Çevre Aydınlatma Yapımı ve Bakımı</h1>
+  <p>
+    Çevre aydınlatma sistemleri, hem güvenlik hem de estetik açısından büyük önem taşır. 
+    Özellikle Bodrum gibi hem yerli hem yabancı turistlerin yoğun ilgi gösterdiği bölgelerde, 
+    dış mekanların profesyonelce aydınlatılması hem görünüm hem de güvenlik açısından olmazsa olmazdır.
+  </p>
+
+  <h2>Çevre Aydınlatması Nedir?</h2>
+  <p>
+    Çevre aydınlatması; bina çevresi, bahçeler, otoparklar, siteler, sokaklar ve yürüyüş yolları gibi açık alanların 
+    gece görünürlüğünü sağlayan aydınlatma sistemleridir. Bu sistemler genellikle bahçe lambası, LED aydınlatmalar ve sensörlü armatürlerle yapılır.
+  </p>
+
+  <h2>Bodrum’da Çevre Aydınlatmasının Önemi</h2>
+  <p>
+    Bodrum’un geniş bahçeli yapıları, site ve villa konseptli konutları için çevre aydınlatma sadece bir konfor değil, aynı zamanda bir güvenlik önlemidir.
+    Doğru aydınlatılmamış alanlar hırsızlık ve kazalara davetiye çıkarabilir. Aynı zamanda dış mekan estetiğini ön plana çıkarmak isteyenler için çevre aydınlatma olmazsa olmazdır.
+  </p>
+
+  <h2>Çevre Aydınlatma Arızaları ve Bakım Gereksinimi</h2>
+  <p>
+    Zamanla dış mekân aydınlatmaları:
+  </p>
+  <ul>
+    <li>Su ve nem nedeniyle bozulabilir,</li>
+    <li>Kablolarda kopma veya kaçak oluşabilir,</li>
+    <li>Ampuller yanabilir veya sensörler çalışmaz hale gelebilir.</li>
+  </ul>
+  <p>
+    Bu gibi durumlarda aydınlatma sisteminiz işlevini kaybeder ve hem güvenlik hem estetik açısından sorun yaratır. 
+    Bu arızaları <strong>kendi başınıza onarmaya çalışmak tehlikeli olabilir</strong>.
+  </p>
+
+  <p>
+    <strong>Kaman Elektrik</strong> olarak, çevre aydınlatma sistemlerinizin hem kurulumunda hem de düzenli bakımında profesyonel destek sunuyoruz.
+  </p>
+
+  <h2>Bodrum Çevre Aydınlatma Hizmetlerimiz</h2>
+  <ul>
+    <li>Yeni çevre aydınlatma sistemlerinin kurulumu</li>
+    <li>Eski dış mekân aydınlatmalarının yenilenmesi</li>
+    <li>LED dönüşüm projeleri</li>
+    <li>Bahçe ve bina çevresi ışıklandırma</li>
+    <li>Arıza tespiti ve tamir hizmeti</li>
+    <li>Fotoselli, sensörlü ve zaman ayarlı sistem çözümleri</li>
+  </ul>
+
+  <p>
+    <strong>Bodrum’da dış mekan aydınlatma çözümleri için bizimle iletişime geçin.</strong> 
+    Hem şık hem güvenli alanlar için profesyonel çözümler sunuyoruz.
+  </p>
+            </div>
+         </div>
+      </div>
+      <!-- Modal -->
+      <div id="imageModal" class="modal">
+         <span class="close" onclick="closeModal()">&times;</span>
+         <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+         </div>
+      </div>
+      <script>
+         function openModal(element) {
+             const modal = document.getElementById('imageModal');
+             const modalImg = document.getElementById('modalImage');
+             const img = element.querySelector('img');
+             
+             modal.classList.add('show');
+             modalImg.src = img.src.replace('w=400', 'w=1200'); // Daha yüksek çözünürlük
+             modalImg.alt = img.alt;
+             
+             // Body scroll'unu engelle
+             document.body.style.overflow = 'hidden';
+         }
+         
+         function closeModal() {
+             const modal = document.getElementById('imageModal');
+             modal.classList.remove('show');
+             
+             // Body scroll'unu geri aç
+             document.body.style.overflow = 'auto';
+         }
+         
+         // Modal dışına tıklandığında kapat
+         document.getElementById('imageModal').onclick = function(event) {
+             if (event.target === this) {
+                 closeModal();
+             }
+         }
+         
+         // ESC tuşu ile kapat
+         document.addEventListener('keydown', function(event) {
+             if (event.key === 'Escape') {
+                 closeModal();
+             }
+         });
+      </script>
+   </body>
+</html>

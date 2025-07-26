@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <link rel="stylesheet" href="/hizmetler/style.css">
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makale Şablonu</title>
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="window.location.href='/';" style="cursor: pointer;">
+      <div class="logo-text">
+        <img src="/img/logo.png" alt="Logo" class="kamanelkpng">
+        <h1>Kaman Elektrik</h1>
+      </div>
+    </div>
+    <a href="/" class="back-button">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>Geri Dön</span>
+    </a>
+  </header>
+    <button onclick="location.href='tel:+905334395754'" id="gototop"><i class="fa-solid fa-phone-volume"></i> Bizi arayın!</button> 
+    <div class="content">
+        <div class="main-container">
+            <div class="article-container">
+                <div class="article-meta">
+                    Yayın Tarihi • 25 Temmuz 2025
+                </div>
+                
+                <section>
+  <h1>Bodrum Elektrik Tesisatı Hakkında Bilmeniz Gerekenler</h1>
+  <p>
+    Elektrik tesisatı, bir yapının elektrik enerjisini güvenli ve düzenli bir şekilde dağıtmasını sağlayan altyapıdır. 
+    Bodrum gibi iklim açısından nemli ve zorlu koşullara sahip bölgelerde elektrik tesisatının kalitesi ve doğru kurulumu, 
+    hem güvenlik hem de uzun ömürlü kullanım açısından son derece kritiktir.
+  </p>
+
+  <h2>Elektrik Tesisatı Nedir?</h2>
+  <p>
+    Elektrik tesisatı; kablolar, sigortalar, prizler, anahtarlar ve dağıtım elemanlarından oluşan, elektrik akımının her noktaya ulaşmasını sağlayan sistemin adıdır. 
+    Evler, iş yerleri veya apartmanlar fark etmeksizin bu sistemin doğru tasarlanması ve uygulanması şarttır.
+  </p>
+
+  <h2>Bodrum’da Elektrik Tesisatının Önemi</h2>
+  <p>
+    Bodrum’un sıcak yazları, nemli kışları ve eski yapı stoğu, tesisat sistemlerinde zamanla aşınma ve risk oluşturabilir. 
+    Eskiyen ya da hatalı döşenmiş tesisatlar:
+  </p>
+  <ul>
+    <li>Sürekli sigorta atmasına,</li>
+    <li>Elektrikli aletlerin zarar görmesine,</li>
+    <li>Yangın riskine,</li>
+    <li>Elektrik çarpmalarına neden olabilir.</li>
+  </ul>
+  <p>
+    Bu yüzden yeni yapılan binalarda profesyonel tesisat kurulumu, eski yapılarda ise zamanında yenileme ve bakım şarttır.
+  </p>
+
+  <h2>Elektrik Tesisatı Arızalarında Ne Yapmalı?</h2>
+  <p>
+    Eğer evinizde priz çalışmıyorsa, ışıklar titriyorsa, sürekli elektrik kesiliyorsa veya sigortalar atıyorsa 
+    elektrik tesisatınızda bir sorun var demektir. Bu gibi durumlarda <strong>kesinlikle kendi başınıza müdahale etmeyin</strong>.
+  </p>
+  <p>
+    <strong>Bodrum elektrikçi</strong> olarak biz; arızalı tesisat tespiti, kaçak akım kontrolü, kablo değişimi ve komple sistem yenileme gibi 
+    hizmetlerle sorununuzu güvenli bir şekilde çözüyoruz.
+  </p>
+
+  <h2>Bodrum Elektrik Tesisatı Hizmetlerimiz</h2>
+  <ul>
+    <li>Sıfırdan elektrik tesisatı kurulumu</li>
+    <li>Tesisat yenileme (eski kabloların değiştirilmesi)</li>
+    <li>Topraklama ve kaçak akım rölesi montajı</li>
+    <li>Akıllı ev sistemleri için altyapı hazırlığı</li>
+    <li>Priz, anahtar, sigorta panosu düzenlemesi</li>
+  </ul>
+
+  <p>
+    <strong>Bodrum’da güvenli bir elektrik tesisatı için işin uzmanından destek alın.</strong> 
+    Elektrik tesisatınızı kontrol ettirmek veya yeniletmek için bizimle iletişime geçin.
+  </p>
+</section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        function openModal(element) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const img = element.querySelector('img');
+            
+            modal.classList.add('show');
+            modalImg.src = img.src.replace('w=400', 'w=1200'); // Daha yüksek çözünürlük
+            modalImg.alt = img.alt;
+            
+            // Body scroll'unu engelle
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('show');
+            
+            // Body scroll'unu geri aç
+            document.body.style.overflow = 'auto';
+        }
+
+        // Modal dışına tıklandığında kapat
+        document.getElementById('imageModal').onclick = function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        }
+
+        // ESC tuşu ile kapat
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
